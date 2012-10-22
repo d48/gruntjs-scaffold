@@ -1,0 +1,35 @@
+{
+  "name": "westup",
+  "description": "this is the bomb.com",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ryanregalado/westup",
+  "author": {
+    "name": "Ryan Regalado",
+    "email": "ryan@design48.net",
+    "url": "http://westup.herokuapp.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ryanregalado/westup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanregalado/westup/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/ryanregalado/westup/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/westup",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.17"
+  },
+  "keywords": []
+}
