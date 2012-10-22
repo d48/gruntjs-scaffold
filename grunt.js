@@ -13,6 +13,12 @@ module.exports = function(grunt) {
       files: '<config:lint.files>',
       tasks: 'default'
     },
+    concat: {
+      dist: {
+        src: ['lib/*.js'],
+        dest: 'dist/lib/concat.js'
+      }
+    },
     jshint: {
       options: {
         curly: true,
@@ -34,13 +40,13 @@ module.exports = function(grunt) {
     },
     min: {
       dist: {
-        src: ['lib/*.js'],
-        dest: 'dist/lib/webtest.min.js'
+        src: ['dist/lib/concat.js'],
+        dest: 'dist/lib/contact.min.js'
       }
     }
   });
 
   // Default task.
-  grunt.registerTask('default', 'lint test min');
+  grunt.registerTask('default', 'lint test concat min');
 
 };
