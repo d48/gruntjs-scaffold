@@ -35,7 +35,7 @@ module.exports = function(grunt) {
     min: {
       dist: {
         src: ['lib/*.js'],
-        dest: 'dist/webtest.min.js'
+        dest: 'dist/lib/webtest.min.js'
       }
     }
   });
