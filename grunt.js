@@ -10,8 +10,8 @@ module.exports = function(grunt) {
       files: ['grunt.js', 'lib/**/*.js', 'test/**/*.js']
     },
     watch: {
-      files: '<config:lint.files>',
-      tasks: 'default'
+      files: ['<config:lint.files>','app/views/*.jade'],
+      tasks: 'default lint concat min jade reload'
     },
     concat: {
       dist: {
@@ -57,13 +57,30 @@ module.exports = function(grunt) {
         src: ['dist/lib/concat.js'],
         dest: 'dist/lib/contact.min.js'
       }
+    },
+
+    // auto-reload web file
+    reload: {
+      port: 35729,
+      proxy: {
+        host: 'localhost',
+        port: 1234
+      },
+      liveReload: {}
+    },
+
+    // spin up server
+    server: {
+      port: 1234,
+      base: 'dist/lib/views'
     }
   });
 
   // Load tasks from NPM packages
   grunt.loadNpmTasks('grunt-jade');
+  grunt.loadNpmTasks('grunt-reload');
 
   // Default task.
-  grunt.registerTask('default', 'lint test concat min jade');
+  grunt.registerTask('default', 'lint test concat min jade reload watch');
 };
 
