@@ -12,8 +12,12 @@ View [grunt.js](https://github.com/design48/gruntjs-scaffold/blob/master/grunt.j
 ## Documentation
 _(Coming soon)_
 
-## Examples
-_(Coming soon)_
+## Examples / Usage
+run `$grunt server reload watch`
+
+open browser to set port
+
+_note_: was having issues with just configuring reload and server task. Got reload to run with LiveReload chrome extension. :thumbsdown:
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/gruntjs/grunt).
