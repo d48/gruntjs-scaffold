@@ -7,7 +7,7 @@ module.exports = function(grunt) {
       files: ['test/**/*.js']
     },
     lint: {
-      files: ['grunt.js', 'lib/**/*.js', 'test/**/*.js']
+      files: ['grunt.js', 'lib/**/*.js', 'test/**/*.js', 'app/views/*.jade']
     },
     watch: {
       files: '<config:lint.files>',
@@ -19,6 +19,20 @@ module.exports = function(grunt) {
         dest: 'dist/lib/concat.js'
       }
     },
+
+    // Compile jade templates to html
+    jade: {
+      // Use links to development assets
+      html: {
+        src: ['app/views/layout.jade'],
+        dest: 'dist/lib/views',
+        options: {
+          client: false,
+          pretty: true
+        }
+      }
+    },
+
     jshint: {
       options: {
         curly: true,
@@ -46,7 +60,10 @@ module.exports = function(grunt) {
     }
   });
 
+  // Load tasks from NPM packages
+  grunt.loadNpmTasks('grunt-jade');
+
   // Default task.
-  grunt.registerTask('default', 'lint test concat min');
+  grunt.registerTask('default', 'lint test concat min jade');
 
 };
