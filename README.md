@@ -1,14 +1,13 @@
-# westup
+# Introduction
 
-this is the bomb.com
+This is just some base grunt.js settings so that I can set up new project quickly with the grunt.js build tool
 
 ## Getting Started
-Install the module with: `npm install westup`
+Install the module with: `npm install grunt`
 
-```javascript
-var westup = require('westup');
-westup.awesome(); // "awesome"
-```
+Then modify `grunt.js` by registering npm tasks
+
+View [grunt.js](https://github.com/design48/gruntjs-scaffold/blob/master/grunt.js) for some ideas 
 
 ## Documentation
 _(Coming soon)_
